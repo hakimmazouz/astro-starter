@@ -8,9 +8,9 @@ export interface Props {
 const { href, title, body } = Astro.props;
 ---
 
-<li class="link-card">
-	<a href={href}>
-		<h2>
+<li class="link-card" data-controller="clipboard-copy">
+	<a href={href} data-action="click->clipboard-copy#kaboom">
+		<h2 data-clipboard-copy-target="title">
 			{title}
 			<span>&rarr;</span>
 		</h2>
