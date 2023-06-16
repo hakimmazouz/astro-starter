@@ -17,8 +17,12 @@ const { title } = Astro.props;
 		<script src="./../scripts/main.js" />
 		<title>{title}</title>
 	</head>
-	<body>
-		<slot />
+	<body data-controller="scroller page-transition">
+		<main data-taxi>
+			<article data-taxi-view>
+				<slot />
+			</article>
+		</main>
 	</body>
 </html>
 <style is:global>

@@ -9,7 +9,6 @@ export default class extends Controller {
   }
 
   kaboom(e) {
-    e.preventDefault();
     console.log("💥");
   }
 }
