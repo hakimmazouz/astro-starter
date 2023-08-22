@@ -1,0 +1,15 @@
+---
+import groq from "groq";
+
+export const fragment = groq`
+    title,
+    body[] { ... }
+`;
+
+const { title, body } = Astro.props;
+---
+
+<section>
+  <h2>{title}</h2>
+  <pre>{JSON.stringify(body, null, 10)}</pre>
+</section>

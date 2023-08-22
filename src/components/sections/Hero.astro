@@ -1,0 +1,26 @@
+---
+import groq from "groq";
+export const fragment = groq`
+    title,
+    subtitle
+`;
+
+const { title, subtitle } = Astro.props;
+---
+
+<hero-section>
+  <h1>{title}</h1>
+  <h2>{subtitle}</h2>
+</hero-section>
+
+<script>
+  class HeroSection extends HTMLElement {
+    constructor() {
+      super();
+
+      this.classList.add("component-loaded");
+    }
+  }
+
+  customElements.define("hero-section", HeroSection);
+</script>

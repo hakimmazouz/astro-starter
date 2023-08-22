@@ -12,5 +12,6 @@ const config = defineConfig({
 });
 
 export default function (containerSelector) {
-  return renderStudio(document.querySelector(containerSelector), config);
+  const el = document.querySelector(containerSelector);
+  if (el) return renderStudio(el, config);
 }
