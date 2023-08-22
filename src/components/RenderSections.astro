@@ -1,20 +1,15 @@
 ---
-import {
-  getPageModuleComponents,
-  getPageModuleFragments,
-} from "../lib/helpers";
-console.log(getPageModuleFragments());
+import { getPageModuleComponents } from "../lib/helpers";
 
 const { sections } = Astro.props;
 const components = getPageModuleComponents();
-console.log({ sections, components });
 ---
 
 <div>
   {
     sections.map((section) => {
-      console.log(section._type);
-      const Component = components[section._type];
+      const Component =
+        components[section._type] || components["moduleMissing"];
 
       return <Component {...section} />;
     })

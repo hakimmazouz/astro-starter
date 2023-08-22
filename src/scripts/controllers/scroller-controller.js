@@ -9,10 +9,6 @@ export default class extends Controller {
     this.onScroll = this.onScroll.bind(this);
     this.lenis = new Lenis();
 
-    this.lenis.on("scroll", (e) => {
-      console.log(e);
-    });
-
     requestAnimationFrame(this.raf);
   }
 

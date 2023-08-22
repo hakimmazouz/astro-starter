@@ -1,0 +1,19 @@
+---
+const { _type, ...data } = Astro.props;
+---
+
+<missing-section data-name={_type} data-data={JSON.stringify(data)}
+></missing-section>
+
+<script>
+  class MissingSection extends HTMLElement {
+    constructor() {
+      super();
+
+      const data = JSON.parse(this.dataset.data);
+      console.warn(`Missing section for ${this.dataset.name} with data`, data);
+    }
+  }
+
+  customElements.define("missing-section", MissingSection);
+</script>

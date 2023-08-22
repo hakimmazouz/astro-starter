@@ -1,6 +1,5 @@
 ---
-import groq from "groq";
-export const fragment = groq`
+export const fragment = `
     title,
     subtitle
 `;
@@ -18,7 +17,7 @@ const { title, subtitle } = Astro.props;
     constructor() {
       super();
 
-      this.classList.add("component-loaded");
+      // do stuff with this component
     }
   }
 
